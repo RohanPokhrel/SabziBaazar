@@ -37,7 +37,7 @@ export default function AccountPage() {
 
   useEffect(() => {
     loadUserData();
-  }, []);
+  }, [loadUserData]);
 
   const loadUserData = async () => {
     try {

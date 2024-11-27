@@ -111,7 +111,7 @@ export default function CartPage() {
     };
 
     loadSavedAddresses();
-  }, []);
+  }, [addresses.length]);
 
   const calculateDiscount = () => {
     if (!selectedVoucher) return 0;

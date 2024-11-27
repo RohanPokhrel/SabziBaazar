@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
@@ -12,14 +12,9 @@ const firebaseConfig = {
   measurementId: "G-CE2MYY76Q1"
 };
 
-// Initialize Firebase only on client side
-let auth;
-let db;
-
-if (typeof window !== 'undefined') {
-  const app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-}
+// Initialize Firebase
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const db = getFirestore(app);
+const auth = getAuth(app);
 
 export { db, auth }; 

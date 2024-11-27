@@ -97,12 +97,6 @@ export default function CartPage() {
     const loadSavedAddresses = async () => {
       try {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        if (addresses.length === 0) {
-          setIsLoadingAddresses(false);
-          return;
-        }
-
         setIsLoadingAddresses(false);
       } catch (error) {
         console.error('Error loading addresses:', error);
@@ -111,7 +105,7 @@ export default function CartPage() {
     };
 
     loadSavedAddresses();
-  }, [addresses.length]);
+  }, []);
 
   const calculateDiscount = () => {
     if (!selectedVoucher) return 0;

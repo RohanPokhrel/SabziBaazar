@@ -12,9 +12,14 @@ const firebaseConfig = {
   measurementId: "G-CE2MYY76Q1"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+// Initialize Firebase only on client side
+let auth;
+let db;
+
+if (typeof window !== 'undefined') {
+  const app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+}
 
 export { db, auth }; 

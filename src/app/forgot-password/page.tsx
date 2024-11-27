@@ -57,7 +57,7 @@ export default function ForgotPasswordPage() {
                   </motion.div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Forgot Password?</h2>
                   <p className="text-gray-600">
-                    No worries! Enter your email and we'll send you reset instructions.
+                    No worries! Enter your email and we&apos;ll send you reset instructions.
                   </p>
                 </div>
 
@@ -125,7 +125,7 @@ export default function ForgotPasswordPage() {
                 </motion.div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Check Your Email</h2>
                 <p className="text-gray-600 mb-8">
-                  We've sent a password reset link to<br />
+                  We&apos;ve sent a password reset link to<br />
                   <span className="font-medium text-gray-900">{email}</span>
                 </p>
                 <motion.div
@@ -140,7 +140,7 @@ export default function ForgotPasswordPage() {
                   </Link>
                 </motion.div>
                 <p className="mt-4 text-sm text-gray-600">
-                  Didn't receive the email?{' '}
+                  Didn&apos;t receive the email?{' '}
                   <button
                     onClick={() => setStep('email')}
                     className="text-green-600 hover:text-green-700 font-medium"

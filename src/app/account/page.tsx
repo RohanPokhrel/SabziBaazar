@@ -35,13 +35,9 @@ export default function AccountPage() {
   const router = useRouter();
   const { setIsLoading } = useLoading();
 
-  useEffect(() => {
-    loadUserData();
-  }, [loadUserData]);
-
-  const loadUserData = async () => {
+  const loadUserData = React.useCallback(async () => {
     try {
-      const user = auth.currentUser;
+      const user = auth?.currentUser;
       if (!user) {
         router.push('/login');
         return;
@@ -55,7 +51,11 @@ export default function AccountPage() {
     } catch (error) {
       console.error('Error loading user data:', error);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    loadUserData();
+  }, [loadUserData]);
 
   const handleUpdateProfile = async () => {
     setIsLoading(true);

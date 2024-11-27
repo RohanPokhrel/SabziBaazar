@@ -45,7 +45,7 @@ export default function OrderFailedPage() {
             transition={{ delay: 0.4 }}
             className="text-gray-600 mb-8"
           >
-            We couldn't process your payment. Please try again or use a different payment method.
+            We couldn&apos;t process your payment. Please try again or use a different payment method.
           </motion.p>
 
           {/* Error Details */}
